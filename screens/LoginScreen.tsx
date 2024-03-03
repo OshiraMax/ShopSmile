@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity } from 'react-native';
+
+import { GoogleSigninButton } from '@react-native-google-signin/google-signin';
+import VKLogin from 'react-native-vkontakte-login';
 
 import { LoginScreenNavigationProp } from '../navigation/types';
 
@@ -21,6 +24,14 @@ const LoginScreen: React.FC<LoginScreenProps> = ({ navigation }) => {
     navigation.navigate('RegisterScreen'); 
   };
 
+  const handleGoogleSignIn = async () => {
+    // Логика входа через Google
+  };
+
+  const handleVKSignIn = async () => {
+    // Логика входа через ВК
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Вход</Text>
@@ -38,8 +49,20 @@ const LoginScreen: React.FC<LoginScreenProps> = ({ navigation }) => {
         style={styles.input}
         secureTextEntry
       />
-      <Button title="Войти" onPress={handleLogin} />
-      <Button title="Регистрация" onPress={navigateToRegister} color="#A8D5BA" />
+      <TouchableOpacity style={styles.button} onPress={handleLogin}>
+        <Text>Войти</Text>
+      </TouchableOpacity>
+      {/* <GoogleSigninButton
+        style={styles.googleButton}
+        size={GoogleSigninButton.Size.Wide}
+        color={GoogleSigninButton.Color.Dark}
+        onPress={handleGoogleSignIn} /> */}
+      <TouchableOpacity style={styles.button} onPress={handleVKSignIn}>
+        <Text>Войти через ВК</Text>
+      </TouchableOpacity>
+      <TouchableOpacity  onPress={navigateToRegister}>
+        <Text>Регистрация</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -63,6 +86,17 @@ const styles = StyleSheet.create({
     borderColor: '#ddd',
     borderRadius: 5,
   },
+  button: {
+    marginTop: 10,
+    padding: 10,
+    backgroundColor: 'lightgrey',
+    borderRadius: 5,
+  },
+  googleButton: {
+    width: 192,
+    height: 48,
+    marginTop: 10,
+  }
 });
 
 export default LoginScreen;
