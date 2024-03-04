@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 
-import { CartScreenNavigationProp } from '../navigation/types';
+import { CartScreenNavigationProp } from '../types/navigationTypes';
 
 type CartScreenProps = {
   navigation: CartScreenNavigationProp;

@@ -38,3 +38,6 @@ yarn-error.*
 # context
 ShopSmile.md
 ShopSmileCode.md
+
+# scripts
+summary.py

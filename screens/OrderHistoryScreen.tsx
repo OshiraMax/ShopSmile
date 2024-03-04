@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, View, Text, StyleSheet } from 'react-native';
 
-import { OrderHistoryScreenNavigationProp } from '../navigation/types';
+import { OrderHistoryScreenNavigationProp } from '../types/navigationTypes';
 
 type OrderHistoryScreenProps = {
   navigation: OrderHistoryScreenNavigationProp;

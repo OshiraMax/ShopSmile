@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, View, Text, StyleSheet } from 'react-native';
 
-import { FeedbackScreenNavigationProp } from '../navigation/types';
+import { FeedbackScreenNavigationProp } from '../types/navigationTypes';
 
 type FeedbackScreenProps = {
   navigation: FeedbackScreenNavigationProp;

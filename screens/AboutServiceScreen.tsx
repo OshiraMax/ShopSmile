@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, View, Text, StyleSheet } from 'react-native';
 
-import { AboutServiceScreenNavigationProp } from '../navigation/types';
+import { AboutServiceScreenNavigationProp } from '../types/navigationTypes';
 
 type AboutServiceScreenProps = {
   navigation: AboutServiceScreenNavigationProp;

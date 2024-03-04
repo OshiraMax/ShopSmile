@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, View, Text, StyleSheet } from 'react-native';
-import { PurchaseResultScreenNavigationProp } from '../navigation/types';
+import { PurchaseResultScreenNavigationProp } from '../types/navigationTypes';
 
 type PurchaseResultScreenProps = {
   navigation: PurchaseResultScreenNavigationProp;

@@ -4,7 +4,8 @@ import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity } from 'rea
 import { GoogleSigninButton } from '@react-native-google-signin/google-signin';
 import VKLogin from 'react-native-vkontakte-login';
 
-import { LoginScreenNavigationProp } from '../navigation/types';
+import { LoginScreenNavigationProp } from '../types/navigationTypes';
+import { useLanguage } from '../hooks/useLanguage';
 
 type LoginScreenProps = {
   navigation: LoginScreenNavigationProp;
@@ -13,6 +14,8 @@ type LoginScreenProps = {
 const LoginScreen: React.FC<LoginScreenProps> = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const { getTranslationsForScreen } = useLanguage();
+  const translations = getTranslationsForScreen('LoginScreen');
 
   const handleLogin = () => {
     console.log('Вход выполнен:', email, password);
@@ -34,23 +37,23 @@ const LoginScreen: React.FC<LoginScreenProps> = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Вход</Text>
+      <Text style={styles.title}>{translations.loginTitle}</Text>
       <TextInput
-        placeholder="Email"
+        placeholder={translations.email}
         value={email}
         onChangeText={setEmail}
         style={styles.input}
         keyboardType="email-address"
       />
       <TextInput
-        placeholder="Пароль"
+        placeholder={translations.password}
         value={password}
         onChangeText={setPassword}
         style={styles.input}
         secureTextEntry
       />
       <TouchableOpacity style={styles.button} onPress={handleLogin}>
-        <Text>Войти</Text>
+        <Text>{translations.login}</Text>
       </TouchableOpacity>
       {/* <GoogleSigninButton
         style={styles.googleButton}
@@ -58,10 +61,10 @@ const LoginScreen: React.FC<LoginScreenProps> = ({ navigation }) => {
         color={GoogleSigninButton.Color.Dark}
         onPress={handleGoogleSignIn} /> */}
       <TouchableOpacity style={styles.button} onPress={handleVKSignIn}>
-        <Text>Войти через ВК</Text>
+        <Text>{translations.loginVK}</Text>
       </TouchableOpacity>
       <TouchableOpacity  onPress={navigateToRegister}>
-        <Text>Регистрация</Text>
+        <Text>{translations.register}</Text>
       </TouchableOpacity>
     </View>
   );

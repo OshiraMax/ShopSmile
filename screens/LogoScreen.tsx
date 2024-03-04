@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { StyleSheet, View, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { LogoScreenNavigationProp } from '../navigation/types';
+import { LogoScreenNavigationProp } from '../types/navigationTypes';
 
 const LogoScreen = () => {
     const navigation = useNavigation<LogoScreenNavigationProp>();

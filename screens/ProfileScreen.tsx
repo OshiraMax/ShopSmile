@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, View, Text, StyleSheet } from 'react-native';
 
-import { ProfileScreenNavigationProp } from '../navigation/types';
+import { ProfileScreenNavigationProp } from '../types/navigationTypes';
 
 type ProfileScreenProps = {
   navigation: ProfileScreenNavigationProp;
