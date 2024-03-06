@@ -1,18 +1,22 @@
 import { useState, useEffect } from 'react';
-import resources from '../localization/locales';
-import { Translations } from '../types/translationTypes';
 
-export const useLanguage = (initialLanguage: string = 'en') => {
-  const [language, setLanguage] = useState<string>(initialLanguage);
-  const [translations, setTranslations] = useState<Translations>(resources[initialLanguage]);
+import { Translations } from '../types/translationTypes';
+import { resources } from '../localization/locales';
+import { settingStore } from '../stores/settingStore';
+
+export const useLanguage = () => {
+  const [translations, setTranslations] = useState<Translations>(resources[settingStore.language]);
 
   useEffect(() => {
-    setTranslations(resources[language]);
-  }, [language]);
+    const updateTranslations = () => {
+      setTranslations(resources[settingStore.language]);
+    };
+    updateTranslations(); 
+  }, [settingStore.language]); 
 
   const getTranslationsForScreen = <T extends keyof Translations>(screenName: T): Translations[T] => {
     return translations[screenName];
   };
 
-  return { setLanguage, getTranslationsForScreen };
+  return { setLanguage: settingStore.setLanguage, getTranslationsForScreen };
 };

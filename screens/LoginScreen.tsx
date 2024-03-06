@@ -6,6 +6,7 @@ import VKLogin from 'react-native-vkontakte-login';
 
 import { LoginScreenNavigationProp } from '../types/navigationTypes';
 import { useLanguage } from '../hooks/useLanguage';
+import { clearLanguageSetting } from '../clear';
 
 type LoginScreenProps = {
   navigation: LoginScreenNavigationProp;
@@ -60,7 +61,7 @@ const LoginScreen: React.FC<LoginScreenProps> = ({ navigation }) => {
         size={GoogleSigninButton.Size.Wide}
         color={GoogleSigninButton.Color.Dark}
         onPress={handleGoogleSignIn} /> */}
-      <TouchableOpacity style={styles.button} onPress={handleVKSignIn}>
+      <TouchableOpacity style={styles.button} onPress={clearLanguageSetting}>
         <Text>{translations.loginVK}</Text>
       </TouchableOpacity>
       <TouchableOpacity  onPress={navigateToRegister}>
