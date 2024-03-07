@@ -1,8 +1,8 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Localization from 'expo-localization';
 
-import { settingStore } from '../stores/settingStore';
-import { Language } from '../types/storeTypes';
+import { settingsStore } from '../stores/settingStore';
+import { Language } from '../types/settingsTypes';
 
 export const initializeLanguage = async () => {
     const locales = Localization.getLocales();
@@ -10,7 +10,7 @@ export const initializeLanguage = async () => {
     const isSupported = Object.values(Language).includes(systemLanguage);
 
     const savedLanguage = (isSupported ? systemLanguage : Language.English);
-    settingStore.setLanguage(savedLanguage as Language);
+    settingsStore.setLanguage(savedLanguage as Language);
 
     try {  
         await AsyncStorage.setItem('language', savedLanguage);

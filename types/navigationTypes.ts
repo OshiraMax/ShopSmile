@@ -13,22 +13,35 @@ export type RootStackParamList = {
   AboutServiceScreen: undefined; 
 };
 
-export type LogoScreenNavigationProp = StackNavigationProp<RootStackParamList, 'LogoScreen'>;
+export type LogoScreenNavigationProp = StackNavigationProp<RootStackParamList, Screens.LogoScreen>;
 
-export type LoginScreenNavigationProp = StackNavigationProp<RootStackParamList, 'LoginScreen'>;
+export type LoginScreenNavigationProp = StackNavigationProp<RootStackParamList, Screens.LoginScreen>;
 
-export type RegisterScreenNavigationProp = StackNavigationProp<RootStackParamList, 'RegisterScreen'>;
+export type RegisterScreenNavigationProp = StackNavigationProp<RootStackParamList, Screens.RegisterScreen>;
 
-export type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, 'HomeScreen'>;
+export type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, Screens.HomeScreen>;
 
-export type CartScreenNavigationProp = StackNavigationProp<RootStackParamList, 'CartScreen'>;
+export type CartScreenNavigationProp = StackNavigationProp<RootStackParamList, Screens.CartScreen>;
 
-export type PurchaseResultScreenNavigationProp = StackNavigationProp<RootStackParamList, 'PurchaseResultScreen'>;
+export type PurchaseResultScreenNavigationProp = StackNavigationProp<RootStackParamList, Screens.PurchaseResultScreen>;
 
-export type ProfileScreenNavigationProp = StackNavigationProp<RootStackParamList, 'ProfileScreen'>;
+export type ProfileScreenNavigationProp = StackNavigationProp<RootStackParamList, Screens.ProfileScreen>;
 
-export type OrderHistoryScreenNavigationProp = StackNavigationProp<RootStackParamList, 'OrderHistoryScreen'>;
+export type OrderHistoryScreenNavigationProp = StackNavigationProp<RootStackParamList, Screens.OrderHistoryScreen>;
 
-export type FeedbackScreenNavigationProp = StackNavigationProp<RootStackParamList, 'FeedbackScreen'>;
+export type FeedbackScreenNavigationProp = StackNavigationProp<RootStackParamList, Screens.FeedbackScreen>;
 
-export type AboutServiceScreenNavigationProp = StackNavigationProp<RootStackParamList, 'AboutServiceScreen'>;
+export type AboutServiceScreenNavigationProp = StackNavigationProp<RootStackParamList, Screens.AboutServiceScreen>;
+
+export enum Screens {
+  LogoScreen = 'LogoScreen',
+  LoginScreen = 'LoginScreen',
+  HomeScreen = 'HomeScreen',
+  RegisterScreen = 'RegisterScreen',
+  CartScreen = 'CartScreen',
+  PurchaseResultScreen = 'PurchaseResultScreen',
+  ProfileScreen = 'ProfileScreen',
+  OrderHistoryScreen = 'OrderHistoryScreen',
+  FeedbackScreen = 'FeedbackScreen',
+  AboutServiceScreen = 'AboutServiceScreen',
+}

@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 
 import { GoogleSigninButton } from '@react-native-google-signin/google-signin';
 import VKLogin from 'react-native-vkontakte-login';
 
-import { LoginScreenNavigationProp } from '../types/navigationTypes';
+import { LoginScreenNavigationProp, Screens } from '../types/navigationTypes';
 import { useLanguage } from '../hooks/useLanguage';
 import { clearLanguageSetting } from '../clear';
+import { handleLogin } from '../services/handleLogin';
 
 type LoginScreenProps = {
   navigation: LoginScreenNavigationProp;
@@ -16,16 +17,10 @@ const LoginScreen: React.FC<LoginScreenProps> = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { getTranslationsForScreen } = useLanguage();
-  const translations = getTranslationsForScreen('LoginScreen');
-
-  const handleLogin = () => {
-    console.log('Вход выполнен:', email, password);
-    navigation.navigate('HomeScreen'); 
-  };
+  const translations = getTranslationsForScreen(Screens.LoginScreen);
 
   const navigateToRegister = () => {
-    console.log('Переход к регистрации');
-    navigation.navigate('RegisterScreen'); 
+    navigation.navigate(Screens.RegisterScreen); 
   };
 
   const handleGoogleSignIn = async () => {
@@ -53,7 +48,7 @@ const LoginScreen: React.FC<LoginScreenProps> = ({ navigation }) => {
         style={styles.input}
         secureTextEntry
       />
-      <TouchableOpacity style={styles.button} onPress={handleLogin}>
+      <TouchableOpacity style={styles.button} onPress={() => handleLogin(email, password, navigation)}>
         <Text>{translations.login}</Text>
       </TouchableOpacity>
       {/* <GoogleSigninButton

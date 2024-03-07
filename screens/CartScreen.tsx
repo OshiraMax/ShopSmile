@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 
-import { CartScreenNavigationProp } from '../types/navigationTypes';
+import { CartScreenNavigationProp, Screens } from '../types/navigationTypes';
 
 type CartScreenProps = {
   navigation: CartScreenNavigationProp;
@@ -13,7 +13,7 @@ const CartScreen: React.FC<CartScreenProps> = ({ navigation }) => {
       <Text style={styles.text}>Это ваша корзина</Text>
       <Button
         title="Перейти к результатам покупки"
-        onPress={() => navigation.navigate('PurchaseResultScreen')}
+        onPress={() => navigation.navigate(Screens.PurchaseResultScreen)}
       />
     </View>
   );

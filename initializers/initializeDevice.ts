@@ -2,7 +2,7 @@ import { Dimensions } from "react-native";
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-import { DeviceType } from "../types/storeTypes";
+import { DeviceType } from "../types/settingsTypes";
 
 export const initializeDevice = async() => {
   const { width } = Dimensions.get('window');

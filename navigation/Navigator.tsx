@@ -1,6 +1,8 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
+import { RootStackParamList, Screens } from '../types/navigationTypes';
+
 import LogoScreen from '../screens/LogoScreen';
 import LoginScreen from '../screens/LoginScreen';
 import RegisterScreen from '../screens/RegisterScreen';
@@ -12,19 +14,19 @@ import OrderHistoryScreen from '../screens/OrderHistoryScreen';
 import FeedbackScreen from '../screens/FeedbackScreen';
 import AboutServiceScreen from '../screens/AboutServiceScreen';
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<RootStackParamList>();
 
 export const Navigator = () => (
-  <Stack.Navigator initialRouteName="LogoScreen" screenOptions={{ headerShown: false }}>
-    <Stack.Screen name="LogoScreen" component={LogoScreen} />
-    <Stack.Screen name="LoginScreen" component={LoginScreen} />
-    <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
-    <Stack.Screen name="HomeScreen" component={HomeScreen} />
-    <Stack.Screen name="CartScreen" component={CartScreen} />
-    <Stack.Screen name="PurchaseResultScreen" component={PurchaseResultScreen} />
-    <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
-    <Stack.Screen name="OrderHistoryScreen" component={OrderHistoryScreen} />
-    <Stack.Screen name="FeedbackScreen" component={FeedbackScreen} />
-    <Stack.Screen name="AboutServiceScreen" component={AboutServiceScreen} />
+  <Stack.Navigator initialRouteName={Screens.LogoScreen} screenOptions={{ headerShown: false }}>
+    <Stack.Screen name={Screens.LogoScreen} component={LogoScreen} />
+    <Stack.Screen name={Screens.LoginScreen} component={LoginScreen} />
+    <Stack.Screen name={Screens.RegisterScreen} component={RegisterScreen} />
+    <Stack.Screen name={Screens.HomeScreen} component={HomeScreen} />
+    <Stack.Screen name={Screens.CartScreen} component={CartScreen} />
+    <Stack.Screen name={Screens.PurchaseResultScreen} component={PurchaseResultScreen} />
+    <Stack.Screen name={Screens.ProfileScreen} component={ProfileScreen} />
+    <Stack.Screen name={Screens.OrderHistoryScreen} component={OrderHistoryScreen} />
+    <Stack.Screen name={Screens.FeedbackScreen} component={FeedbackScreen} />
+    <Stack.Screen name={Screens.AboutServiceScreen} component={AboutServiceScreen} />
   </Stack.Navigator>
 );

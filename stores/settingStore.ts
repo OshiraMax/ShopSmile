@@ -1,10 +1,9 @@
 import { makeAutoObservable } from "mobx";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-import { DeviceType, Theme, Language } from "../types/storeTypes";
+import { DeviceType, Theme, Language } from "../types/settingsTypes";
 
-
-export class SettingStore {
+export class SettingsStore {
   theme: Theme = Theme.Light;
   deviceType: DeviceType = DeviceType.Mobile;
   language: Language = Language.English;
@@ -44,4 +43,4 @@ export class SettingStore {
   }
 }
 
-export const settingStore = new SettingStore();
+export const settingsStore = new SettingsStore();

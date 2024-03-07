@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, View, Text, StyleSheet } from 'react-native';
 
-import { FeedbackScreenNavigationProp } from '../types/navigationTypes';
+import { FeedbackScreenNavigationProp, Screens } from '../types/navigationTypes';
 
 type FeedbackScreenProps = {
   navigation: FeedbackScreenNavigationProp;
@@ -13,7 +13,7 @@ const FeedbackScreen: React.FC<FeedbackScreenProps> = ({ navigation }) => {
       <Text>Feedback Screen</Text>
       <Button
         title="Go to About Service"
-        onPress={() => navigation.navigate('AboutServiceScreen')}
+        onPress={() => navigation.navigate(Screens.AboutServiceScreen)}
       />
     </View>
   );

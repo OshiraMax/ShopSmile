@@ -1,14 +1,14 @@
-import { settingStore } from '../stores/settingStore'; 
-import { Theme } from '../types/storeTypes';
+import { settingsStore } from '../stores/settingStore'; 
+import { Theme } from '../types/settingsTypes';
 
 export const useTheme = () => {
   const toggleTheme = () => {
-    settingStore.setTheme(settingStore.theme === Theme.Light ? Theme.Dark : Theme.Light);
+    settingsStore.setTheme(settingsStore.theme === Theme.Light ? Theme.Dark : Theme.Light);
   };
 
   return {
-    theme: settingStore.theme,
+    theme: settingsStore.theme,
     toggleTheme,
-    deviceType: settingStore.deviceType,
+    deviceType: settingsStore.deviceType,
   };
 };

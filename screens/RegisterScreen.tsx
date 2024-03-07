@@ -1,30 +1,23 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button, StyleSheet, Alert } from 'react-native';
 
-import { RegisterScreenNavigationProp } from '../types/navigationTypes';
+import { RegisterScreenNavigationProp, Screens } from '../types/navigationTypes';
 
 type RegisterScreenProps = {
   navigation: RegisterScreenNavigationProp;
 };
 
 const RegisterScreen: React.FC<RegisterScreenProps> = ({ navigation }) => {
-  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleRegister = () => {
-    navigation.navigate('HomeScreen');
-    Alert.alert('Регистрация', `Пользователь ${username} зарегистрирован`);
+    navigation.navigate(Screens.HomeScreen);
+    Alert.alert('Регистрация', `Пользователь ${email} зарегистрирован`);
   };
 
   return (
     <View style={styles.container}>
-      <TextInput
-        placeholder="Имя пользователя"
-        value={username}
-        onChangeText={setUsername}
-        style={styles.input}
-      />
       <TextInput
         placeholder="Электронная почта"
         value={email}

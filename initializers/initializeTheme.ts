@@ -2,8 +2,8 @@ import { Appearance } from 'react-native';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import { settingStore } from '../stores/settingStore';
-import { Theme } from '../types/storeTypes';
+import { settingsStore } from '../stores/settingStore';
+import { Theme } from '../types/settingsTypes';
 
 export const initializeTheme = async() => {
   const colorScheme = Appearance.getColorScheme();
@@ -11,7 +11,7 @@ export const initializeTheme = async() => {
 
   if (colorScheme) {
     theme = colorScheme === 'dark' ? Theme.Dark : Theme.Light;
-    settingStore.setTheme(theme);
+    settingsStore.setTheme(theme);
   }
 
   try {

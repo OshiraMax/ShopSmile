@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, View, Text, StyleSheet } from 'react-native';
 
-import { ProfileScreenNavigationProp } from '../types/navigationTypes';
+import { ProfileScreenNavigationProp, Screens } from '../types/navigationTypes';
 
 type ProfileScreenProps = {
   navigation: ProfileScreenNavigationProp;
@@ -13,7 +13,7 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ navigation }) => {
       <Text>Profile Screen</Text>
       <Button
         title="Go to Order History"
-        onPress={() => navigation.navigate('OrderHistoryScreen')}
+        onPress={() => navigation.navigate(Screens.OrderHistoryScreen)}
       />
     </View>
   );

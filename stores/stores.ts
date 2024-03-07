@@ -1,9 +1,9 @@
-import { settingStore, SettingStore } from './settingStore';
+import { settingsStore, SettingsStore } from './settingStore';
 
 export interface Stores {
-  settingStore: SettingStore;
+  settingsStore: SettingsStore;
 }
 
 export const stores: Stores = {
-  settingStore
+  settingsStore
 };

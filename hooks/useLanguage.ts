@@ -2,21 +2,21 @@ import { useState, useEffect } from 'react';
 
 import { Translations } from '../types/translationTypes';
 import { resources } from '../localization/locales';
-import { settingStore } from '../stores/settingStore';
+import { settingsStore } from '../stores/settingStore';
 
 export const useLanguage = () => {
-  const [translations, setTranslations] = useState<Translations>(resources[settingStore.language]);
+  const [translations, setTranslations] = useState<Translations>(resources[settingsStore.language]);
 
   useEffect(() => {
     const updateTranslations = () => {
-      setTranslations(resources[settingStore.language]);
+      setTranslations(resources[settingsStore.language]);
     };
     updateTranslations(); 
-  }, [settingStore.language]); 
+  }, [settingsStore.language]); 
 
   const getTranslationsForScreen = <T extends keyof Translations>(screenName: T): Translations[T] => {
     return translations[screenName];
   };
 
-  return { setLanguage: settingStore.setLanguage, getTranslationsForScreen };
+  return { setLanguage: settingsStore.setLanguage, getTranslationsForScreen };
 };
